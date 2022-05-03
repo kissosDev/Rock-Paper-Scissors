@@ -26,7 +26,7 @@ function scoreBoard(player1Score, player2Score) {
 }
 
 function getUserInput() {
-  const action = ["rock", "paper", "scissors", "Q"];
+  const action = ["rock", "paper", "scissors", "Qgit add README.md"];
   let userInput = prompt(
     "Pick rock, paper, scissors  to play or Q for end the game"
   );
