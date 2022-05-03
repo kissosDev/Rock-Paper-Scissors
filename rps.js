@@ -20,13 +20,12 @@
 //     }
 //     return false;
 // }
-const ssss = 1;
-function scoreBoard(player1Score, player2Score) {
+function printScoreBoard(player1Score, player2Score) {
   console.log(`player1 score:${player1Score} player2 score: ${player2Score}`);
 }
 
 function getUserInput() {
-  const action = ["rock", "paper", "scissors", "Qgit add README.md"];
+  const action = ["rock", "paper", "scissors", "Q"];
   let userInput = prompt(
     "Pick rock, paper, scissors  to play or Q for end the game"
   );
@@ -38,7 +37,7 @@ function getUserInput() {
   return userInput;
 }
 
-function getWinnerChoice(userInput1, userInput2) {
+function compareChoices(userInput1, userInput2) {
   if (userInput1 === userInput2) {
     return 0;
   }
@@ -62,7 +61,7 @@ function getWinnerChoice(userInput1, userInput2) {
   }
 }
 
-function rockPaperScissors() {
+function playRockPaperScissors() {
   console.log("Welcome to Rock Paper Scissors Game");
 
   let until = 3;
@@ -75,17 +74,15 @@ function rockPaperScissors() {
     let choice2 = getUserInput();
     if (choice2 === "Q") break;
 
-    let winner = getWinnerChoice(choice1, choice2);
+    let winner = compareChoices(choice1, choice2);
     if (winner === -1) {
       player2Score++;
-      scoreBoard(player1Score, player2Score);
     } else if (winner === 1) {
       player1Score++;
-      scoreBoard(player1Score, player2Score);
     } else if (winner === 0) {
       console.log("It's a tie, keep playing");
-      scoreBoard(player1Score, player2Score);
     }
+    printScoreBoard(player1Score, player2Score);
   }
   if (player1Score === until) {
     console.log("Player1 Won");
