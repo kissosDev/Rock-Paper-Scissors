@@ -20,7 +20,7 @@
 //     }
 //     return false;
 // }
-
+const ssss = 1;
 function scoreBoard(player1Score, player2Score) {
   console.log(`player1 score:${player1Score} player2 score: ${player2Score}`);
 }
